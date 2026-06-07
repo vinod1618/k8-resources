@@ -13,6 +13,5 @@ spec:
         cpu: "100m"    #cpu
         #hard limit
       limits:
-        requests:
-          memory: "128Mi"
-          cpu: "150m"    #cpu
+        memory: "128Mi"
+        cpu: "150m"    #cpu
