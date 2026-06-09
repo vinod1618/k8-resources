@@ -5,7 +5,7 @@ metadata:
   # these lables are replica set lables
   labels:
     project: roboshop
-    purpose: rs demo
+    purpose: rs-demo
     tier: frontend
 spec:
   replicas: 3
@@ -13,14 +13,14 @@ spec:
   # using these labels replica set selects the pod
     matchLabels:
       project: roboshop
-      purpose: rs demo
+      purpose: rs-demo
       tier: frontend
 # This is pod definition. pod is subset of replica set
   template:
     metadata:
       labels:
         project: roboshop
-        purpose: rs demo
+        purpose: rs-demo
         tier: frontend
     spec:
       containers:
