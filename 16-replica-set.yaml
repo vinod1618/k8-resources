@@ -8,7 +8,7 @@ metadata:
     purpose: rs-demo
     tier: frontend
 spec:
-  replicas: 10
+  replicas: 1
   selector:
   # using these labels replica set selects the pod
     matchLabels:
