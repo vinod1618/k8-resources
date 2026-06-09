@@ -8,7 +8,7 @@ metadata:
     purpose: rs-demo
     tier: frontend
   annotations:
-    kubernetes.io/change-cause: "moving to 1.29"
+    kubernetes.io/change-cause: "moving to 1.29.7"
 spec:
   replicas: 2
   selector:
@@ -27,4 +27,4 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.29
+        image: nginx:1.29.7
