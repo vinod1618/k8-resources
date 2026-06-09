@@ -3,7 +3,7 @@ kind: ReplicaSet
 metadata:
   name: nginx
   # these lables are replica set lables
-  lables:
+  labels:
     project: roboshop
     purpose: rs demo
     tier: frontend
@@ -18,7 +18,7 @@ spec:
 # This is pod definition. pod is subset of replica set
   template:
     metadata:
-      lables:
+      labels:
         project: roboshop
         purpose: rs demo
         tier: frontend
