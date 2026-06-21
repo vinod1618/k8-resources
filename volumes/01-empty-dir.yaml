@@ -21,4 +21,4 @@ spec:
   volumes:
   - name: nginx-logs
     emptyDir:
-      sizeLimit: 500Mi  
+      sizeLimit: 500Mi
