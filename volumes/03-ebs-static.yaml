@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: ebs
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 5Gi # should be less than or equal to your disk size
+  csi:
+    driver: ebs.csi.aws.com
+    fsType: ext4
+    volumeHandle: vol-0c37b65c7b5cc5e5c
