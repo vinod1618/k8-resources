@@ -28,4 +28,4 @@ spec:
   volumes:
   - name: html-data
     persistentVolumeClaim:
-      claimName: ebs
+      claimName: ebs-dynamic
