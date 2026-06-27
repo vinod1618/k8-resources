@@ -52,7 +52,7 @@ kind: Service
 metadata: 
   name: nginx-headless
 spec:
-  clusterIP: none
+  clusterIP: None
   selector:
   #lables are used as selectors
     project: roboshop
