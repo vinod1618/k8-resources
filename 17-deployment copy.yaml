@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  # these lables are replica set lables
+  labels:
+    project: roboshop
+    purpose: rs-demo
+    tier: frontend
+  annotations:
+    kubernetes.io/change-cause: "moving to 1.29.7"
+spec:
+  replicas: 2
+  selector:
+  # using these labels replica set selects the pod
+    matchLabels:
+      project: roboshop
+      purpose: rs-demo
+      tier: frontend
+# This is pod definition. pod is subset of replica set
+  template:
+    metadata:
+      labels:
+        project: roboshop
+        purpose: rs-demo
+        tier: frontend
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.29.7
+
+---
+
+apiVersion: v1
+kind: Service
+metadata: 
+  name: nginx
+spec:
+  selector:
+  #lables are used as selectors
+    project: roboshop
+    tier: frontend
+  ports:
+    - protocol: TCP
+      port: 80 # service port
+      targetPort: 80 # container port
