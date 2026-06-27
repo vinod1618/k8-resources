@@ -32,17 +32,17 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: app
+  name: nginx
 spec:
   containers:
   - name: app
-    image: public.ecr.aws/amazonlinux/amazonlinux
+    image: nginx
     command: ["/bin/sh"]
     args: ["-c", "while true; do echo $(date -u) >> /data/out.txt; sleep 5; done"]
     volumeMounts:
-    - name: persistent-storage
-      mountPath: /data
+    - name: html-data
+      mountPath: /usr/share/nginx/html
   volumes:
-  - name: persistent-storage
+  - name: html-data
     persistentVolumeClaim:
-      claimName: ebs-claim
+      claimName: ebs
