@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: ebs
+  name: ebs-static
 spec:
   accessModes:
   - ReadWriteOnce
@@ -10,17 +10,17 @@ spec:
   csi:
     driver: ebs.csi.aws.com
     fsType: ext4
-    volumeHandle: vol-048750393cec0a982
+    volumeHandle: vol-0b131548c5ae8607a
 
 ---
 
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: ebs
+  name: ebs-static
 spec:
   storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
-  volumeName: ebs # this is the pv name
+  volumeName: ebs-static # this is the pv name
   accessModes:
     - ReadWriteOnce
   resources:
@@ -45,4 +45,4 @@ spec:
   volumes:
   - name: html-data
     persistentVolumeClaim:
-      claimName: ebs
+      claimName: ebs-static
